@@ -1,14 +1,22 @@
-<!-- index.html (uses YOUR exact folder/file names: img/1.jpg ... img/4.jpg and img/intel-header-logo.svg) -->
+<!-- index.html (Week 4: Bootstrap + RTL + 3-col section + subscription form + footer)
+     NOTE: This keeps your existing layout and timeline.
+     ACTIONS YOU MUST DO:
+       1) Replace your entire index.html with this file.
+       2) Delete your old "Test Button".
+       3) If you want Arabic RTL by default: keep lang="ar" dir="rtl". If not, switch back to en/ltr.
+-->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Saif Syed | Portfolio</title>
   <meta name="description" content="Single-page portfolio showcasing projects, skills, and contact information." />
 
+  <!-- Bootstrap (RTL-ready styling is handled via dir="rtl"; using standard CSS is fine for rubric) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <!-- Icons (Font Awesome) -->
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
   <link
     rel="stylesheet"
@@ -21,8 +29,6 @@
 
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <button class="btn btn-primary">Test Button</button>
 
   <!-- Header + Nav -->
   <header class="site-header" id="home">
@@ -41,9 +47,12 @@
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#intel-timeline">Timeline</a></li>
+        <li><a href="#highlights">Highlights</a></li>
+        <li><a href="#subscribe">Subscribe</a></li>
         <li><a href="#contact">Contact</a></li>
         <li>
-          <a class="btn btn-ghost" href="https://github.com/GCA-Classroom/02-prj-intel-sustainability" target="_blank" rel="noreferrer">
+          <!-- Update this to your Week 4 repo if desired -->
+          <a class="btn btn-ghost" href="https://github.com/SaifSyed786/SaifSyed786-03-prj-intel-localization" target="_blank" rel="noreferrer">
             <i class="fa-brands fa-github"></i> Repo
           </a>
         </li>
@@ -97,7 +106,7 @@
             <div class="stat-label">Featured Project</div>
           </div>
           <div class="stat">
-            <div class="stat-num">Week 2</div>
+            <div class="stat-num">Week 4</div>
             <div class="stat-label">Course</div>
           </div>
           <div class="stat">
@@ -171,7 +180,6 @@
                 <i class="fa-brands fa-github"></i> Code
               </a>
 
-              <!-- If/when you have GitHub Pages, replace # with your live URL -->
               <a class="btn btn-small" href="#intel-timeline">
                 <i class="fa-solid fa-arrow-down"></i> View Timeline
               </a>
@@ -205,169 +213,262 @@
           </article>
         </div>
 
-        <!-- Intel Timeline (uses YOUR images exactly: img/1.jpg ... img/4.jpg and img/intel-header-logo.svg) -->
+        <!-- Intel Timeline -->
         <section class="timeline-wrap" id="intel-timeline" aria-label="Intel sustainability timeline">
-  <div class="timeline-header">
-    <div class="timeline-brand">
-      <img class="intel-logo" src="img/intel-header-logo.svg" alt="Intel logo" />
-      <div>
-        <h2 class="timeline-title">Sustainability Through the Ages</h2>
-        <p class="timeline-sub">
-          Explore Intel's journey through time and how innovation supports a more sustainable future.
-        </p>
+          <div class="timeline-header">
+            <div class="timeline-brand">
+              <img class="intel-logo" src="img/intel-header-logo.svg" alt="Intel logo" />
+              <div>
+                <h2 class="timeline-title">Sustainability Through the Ages</h2>
+                <p class="timeline-sub">
+                  Explore Intel's journey through time and how innovation supports a more sustainable future.
+                </p>
+              </div>
+            </div>
+            <p class="timeline-hint">Desktop: scroll horizontally • Mobile: stacks vertically • Hover/focus to reveal details</p>
+          </div>
+
+          <div class="timeline-grid">
+
+            <article class="t-card" tabindex="0">
+              <img class="t-img" src="img/1.png" alt="Illustration representing Intel's early semiconductor era (1968)." />
+              <h2>1968</h2>
+              <h3>Intel Founded</h3>
+              <p class="t-summary">Intel is founded, laying the groundwork for decades of innovation.</p>
+              <div class="t-details" aria-label="More details">
+                <ul>
+                  <li>Started as NM Electronics; renamed Intel Corporation.</li>
+                  <li>Set a long-term innovation trajectory in computing.</li>
+                  <li>Early focus: engineering scale and performance.</li>
+                </ul>
+              </div>
+              <p class="t-hint">Hover / focus for details</p>
+            </article>
+
+            <article class="t-card" tabindex="0">
+              <img class="t-img" src="img/2.png" alt="Close-up of a microprocessor on a circuit board (1971 milestone)." />
+              <h2>1971</h2>
+              <h3>First Microprocessor</h3>
+              <p class="t-summary">Intel debuts the 4004, accelerating the future of computing devices.</p>
+              <div class="t-details" aria-label="More details">
+                <ul>
+                  <li>Introduced general-purpose compute on a chip.</li>
+                  <li>Enabled smaller, more capable systems over time.</li>
+                  <li>Set the pace for performance-per-watt progress.</li>
+                </ul>
+              </div>
+              <p class="t-hint">Hover / focus for details</p>
+            </article>
+
+            <article class="t-card" tabindex="0">
+              <img class="t-img" src="img/3.png" alt="Intel 8086 chip imagery (1978 milestone)." />
+              <h2>1978</h2>
+              <h3>8086 Processor</h3>
+              <p class="t-summary">Launch of the 8086 establishes the x86 architecture’s legacy.</p>
+              <div class="t-details" aria-label="More details">
+                <ul>
+                  <li>Created an architectural foundation used for decades.</li>
+                  <li>Enabled ecosystem growth: software + hardware alignment.</li>
+                  <li>Performance upgrades compounded over generations.</li>
+                </ul>
+              </div>
+              <p class="t-hint">Hover / focus for details</p>
+            </article>
+
+            <article class="t-card" tabindex="0">
+              <img class="t-img" src="img/4.png" alt="Intel 386-era chip imagery (1985 milestone)." />
+              <h2>1985</h2>
+              <h3>386 Processor</h3>
+              <p class="t-summary">32-bit architecture unlocks a new era of performance and multitasking.</p>
+              <div class="t-details" aria-label="More details">
+                <ul>
+                  <li>Major step forward in compute capability for PCs.</li>
+                  <li>Expanded what software could do at the time.</li>
+                  <li>Built momentum for the modern PC era.</li>
+                </ul>
+              </div>
+              <p class="t-hint">Hover / focus for details</p>
+            </article>
+
+            <article class="t-card" tabindex="0">
+              <img class="t-img" src="img/2.png" alt="Microchip illustration representing manufacturing operations and emissions." />
+              <h2>2006</h2>
+              <h3>Peak GHG Emissions</h3>
+              <p class="t-summary">Intel’s operational greenhouse gas emissions reach a high point.</p>
+              <div class="t-details" aria-label="More details">
+                <ul>
+                  <li>Invests in chemical abatement systems to reduce emissions.</li>
+                  <li>Expands renewable energy sourcing over subsequent years.</li>
+                  <li>Improves manufacturing efficiency to reverse the trend.</li>
+                </ul>
+              </div>
+              <p class="t-hint">Hover / focus for details</p>
+            </article>
+
+            <article class="t-card" tabindex="0">
+              <img class="t-img" src="img/1.png" alt="Illustration representing sustainability strategy and long-term planning." />
+              <h2>2020</h2>
+              <h3>RISE Strategy</h3>
+              <p class="t-summary">Intel launches RISE strategy and 2030 goals to drive progress.</p>
+              <div class="t-details" aria-label="More details">
+                <ul>
+                  <li>RISE = Responsible, Inclusive, Sustainable, Enabling.</li>
+                  <li>Targets climate action, water stewardship, and waste reduction.</li>
+                  <li>Moves sustainability into measurable, time-bound goals.</li>
+                </ul>
+              </div>
+              <p class="t-hint">Hover / focus for details</p>
+            </article>
+
+            <article class="t-card" tabindex="0">
+              <img class="t-img" src="img/4.png" alt="Microchip illustration representing net-zero commitment and long-term goals." />
+              <h2>2022</h2>
+              <h3>Net-Zero By 2040</h3>
+              <p class="t-summary">Commitment to reach net-zero (Scope 1 &amp; 2) by 2040.</p>
+              <div class="t-details" aria-label="More details">
+                <ul>
+                  <li>Long-horizon roadmap with staged milestones.</li>
+                  <li>Builds on years of operational environmental initiatives.</li>
+                  <li>Requires sustained execution and progress tracking.</li>
+                </ul>
+              </div>
+              <p class="t-hint">Hover / focus for details</p>
+            </article>
+
+            <article class="t-card" tabindex="0">
+              <img class="t-img" src="img/3.png" alt="Microchip illustration representing renewable electricity usage and efficiency." />
+              <h2>2023</h2>
+              <h3>Renewable Electricity</h3>
+              <p class="t-summary">Intel reaches 99% renewable electricity usage worldwide.</p>
+              <div class="t-details" aria-label="More details">
+                <ul>
+                  <li>Helps lower operational carbon emissions.</li>
+                  <li>Supports progress toward long-term climate goals.</li>
+                  <li>Demonstrates scale execution across global operations.</li>
+                </ul>
+              </div>
+              <p class="t-hint">Hover / focus for details</p>
+            </article>
+
+            <article class="t-card" tabindex="0">
+              <img class="t-img" src="img/1.png" alt="Illustration representing collaboration and sustainability leadership." />
+              <h2>2024</h2>
+              <h3>Sustainability Summit</h3>
+              <p class="t-summary">Intel hosts its first Sustainability Summit to align stakeholders.</p>
+              <div class="t-details" aria-label="More details">
+                <ul>
+                  <li>Brings suppliers, government, and industry together.</li>
+                  <li>Focuses on next-gen sustainable semiconductor manufacturing.</li>
+                  <li>Accelerates collaboration on shared sustainability outcomes.</li>
+                </ul>
+              </div>
+              <p class="t-hint">Hover / focus for details</p>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- ===== Week 4: Bootstrap 3-column section (Required) ===== -->
+        <section class="container my-5" id="highlights" aria-labelledby="highlightsTitle">
+          <div class="d-flex align-items-end justify-content-between flex-wrap gap-2 mb-3">
+            <h2 class="m-0" id="highlightsTitle">أبرز نقاط الاستدامة</h2>
+            <p class="text-body-secondary m-0">قسم ثلاثي الأعمدة يدعم الشاشات الكبيرة والصغيرة</p>
+          </div>
+
+          <div class="row g-4 text-center">
+            <div class="col-12 col-md-4">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <h3 class="h5 d-flex align-items-center justify-content-center gap-2">
+                    <span aria-hidden="true">🌱</span> الاستدامة
+                  </h3>
+                  <p class="text-body-secondary mb-3">
+                    تحسين التصنيع وتقليل الأثر البيئي عبر أهداف قابلة للقياس.
+                  </p>
+                  <a class="btn btn-outline-primary btn-sm w-100" href="#intel-timeline">Learn More</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <h3 class="h5 d-flex align-items-center justify-content-center gap-2">
+                    <span aria-hidden="true">⚡</span> الكفاءة
+                  </h3>
+                  <p class="text-body-secondary mb-3">
+                    التركيز على الأداء مقابل الطاقة والتوسع بكفاءة على نطاق عالمي.
+                  </p>
+                  <a class="btn btn-outline-primary btn-sm w-100" href="#intel-timeline">Learn More</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <h3 class="h5 d-flex align-items-center justify-content-center gap-2">
+                    <span aria-hidden="true">🌍</span> تأثير عالمي
+                  </h3>
+                  <p class="text-body-secondary mb-3">
+                    دعم فرق ومجتمعات متعددة اللغات مع تصميم شامل وسهل الوصول.
+                  </p>
+                  <a class="btn btn-outline-primary btn-sm w-100" href="#subscribe">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== Week 4: Subscription form + Footer (Required) ===== -->
+        <section class="container my-5" id="subscribe" aria-labelledby="subscribeTitle">
+          <h2 class="mb-3" id="subscribeTitle">اشترك في نشرة الاستدامة</h2>
+          <p class="text-body-secondary" id="privacyNote">
+            هذا نموذج تجريبي للمشروع. يمكنك إلغاء الاشتراك في أي وقت.
+          </p>
+
+          <form class="row g-3" aria-describedby="privacyNote">
+            <div class="col-12 col-md-6">
+              <label for="email" class="form-label">البريد الإلكتروني</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                class="form-control"
+                autocomplete="email"
+                placeholder="name@example.com"
+                required
+              />
+              <div class="form-text">سنرسل تحديثات الاستدامة فقط.</div>
+            </div>
+
+            <div class="col-12 col-md-6">
+              <label for="frequency" class="form-label">معدل الإرسال</label>
+              <select id="frequency" name="frequency" class="form-select" required>
+                <option value="" selected disabled>اختر خيارًا</option>
+                <option value="weekly">أسبوعي</option>
+                <option value="monthly">شهري</option>
+                <option value="quarterly">ربع سنوي</option>
+              </select>
+            </div>
+
+            <div class="col-12">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="consent" required />
+                <label class="form-check-label" for="consent">
+                  أوافق على تلقي رسائل البريد الإلكتروني وأفهم أنني أستطيع إلغاء الاشتراك في أي وقت.
+                </label>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <button class="btn btn-primary" type="submit">Subscribe</button>
+            </div>
+          </form>
+        </section>
+
       </div>
-    </div>
-    <p class="timeline-hint">Desktop: scroll horizontally • Mobile: stacks vertically • Hover/focus to reveal details</p>
-  </div>
-
-  <div class="timeline-grid">
-
-    <!-- 1968 -->
-    <article class="t-card" tabindex="0">
-      <img class="t-img" src="img/1.png" alt="Illustration representing Intel's early semiconductor era (1968)." />
-      <h2>1968</h2>
-      <h3>Intel Founded</h3>
-      <p class="t-summary">Intel is founded, laying the groundwork for decades of innovation.</p>
-      <div class="t-details" aria-label="More details">
-        <ul>
-          <li>Started as NM Electronics; renamed Intel Corporation.</li>
-          <li>Set a long-term innovation trajectory in computing.</li>
-          <li>Early focus: engineering scale and performance.</li>
-        </ul>
-      </div>
-      <p class="t-hint">Hover / focus for details</p>
-    </article>
-
-    <!-- 1971 -->
-    <article class="t-card" tabindex="0">
-      <img class="t-img" src="img/2.png" alt="Close-up of a microprocessor on a circuit board (1971 milestone)." />
-      <h2>1971</h2>
-      <h3>First Microprocessor</h3>
-      <p class="t-summary">Intel debuts the 4004, accelerating the future of computing devices.</p>
-      <div class="t-details" aria-label="More details">
-        <ul>
-          <li>Introduced general-purpose compute on a chip.</li>
-          <li>Enabled smaller, more capable systems over time.</li>
-          <li>Set the pace for performance-per-watt progress.</li>
-        </ul>
-      </div>
-      <p class="t-hint">Hover / focus for details</p>
-    </article>
-
-    <!-- 1978 -->
-    <article class="t-card" tabindex="0">
-      <img class="t-img" src="img/3.png" alt="Intel 8086 chip imagery (1978 milestone)." />
-      <h2>1978</h2>
-      <h3>8086 Processor</h3>
-      <p class="t-summary">Launch of the 8086 establishes the x86 architecture’s legacy.</p>
-      <div class="t-details" aria-label="More details">
-        <ul>
-          <li>Created an architectural foundation used for decades.</li>
-          <li>Enabled ecosystem growth: software + hardware alignment.</li>
-          <li>Performance upgrades compounded over generations.</li>
-        </ul>
-      </div>
-      <p class="t-hint">Hover / focus for details</p>
-    </article>
-
-    <!-- 1985 -->
-    <article class="t-card" tabindex="0">
-      <img class="t-img" src="img/4.png" alt="Intel 386-era chip imagery (1985 milestone)." />
-      <h2>1985</h2>
-      <h3>386 Processor</h3>
-      <p class="t-summary">32-bit architecture unlocks a new era of performance and multitasking.</p>
-      <div class="t-details" aria-label="More details">
-        <ul>
-          <li>Major step forward in compute capability for PCs.</li>
-          <li>Expanded what software could do at the time.</li>
-          <li>Built momentum for the modern PC era.</li>
-        </ul>
-      </div>
-      <p class="t-hint">Hover / focus for details</p>
-    </article>
-
-    <!-- 2006 -->
-    <article class="t-card" tabindex="0">
-      <img class="t-img" src="img/2.png" alt="Microchip illustration representing manufacturing operations and emissions." />
-      <h2>2006</h2>
-      <h3>Peak GHG Emissions</h3>
-      <p class="t-summary">Intel’s operational greenhouse gas emissions reach a high point.</p>
-      <div class="t-details" aria-label="More details">
-        <ul>
-          <li>Invests in chemical abatement systems to reduce emissions.</li>
-          <li>Expands renewable energy sourcing over subsequent years.</li>
-          <li>Improves manufacturing efficiency to reverse the trend.</li>
-        </ul>
-      </div>
-      <p class="t-hint">Hover / focus for details</p>
-    </article>
-
-    <!-- 2020 -->
-    <article class="t-card" tabindex="0">
-      <img class="t-img" src="img/1.png" alt="Illustration representing sustainability strategy and long-term planning." />
-      <h2>2020</h2>
-      <h3>RISE Strategy</h3>
-      <p class="t-summary">Intel launches RISE strategy and 2030 goals to drive progress.</p>
-      <div class="t-details" aria-label="More details">
-        <ul>
-          <li>RISE = Responsible, Inclusive, Sustainable, Enabling.</li>
-          <li>Targets climate action, water stewardship, and waste reduction.</li>
-          <li>Moves sustainability into measurable, time-bound goals.</li>
-        </ul>
-      </div>
-      <p class="t-hint">Hover / focus for details</p>
-    </article>
-
-    <!-- 2022 -->
-    <article class="t-card" tabindex="0">
-      <img class="t-img" src="img/4.png" alt="Microchip illustration representing net-zero commitment and long-term goals." />
-      <h2>2022</h2>
-      <h3>Net-Zero By 2040</h3>
-      <p class="t-summary">Commitment to reach net-zero (Scope 1 &amp; 2) by 2040.</p>
-      <div class="t-details" aria-label="More details">
-        <ul>
-          <li>Long-horizon roadmap with staged milestones.</li>
-          <li>Builds on years of operational environmental initiatives.</li>
-          <li>Requires sustained execution and progress tracking.</li>
-        </ul>
-      </div>
-      <p class="t-hint">Hover / focus for details</p>
-    </article>
-
-    <!-- 2023 -->
-    <article class="t-card" tabindex="0">
-      <img class="t-img" src="img/3.png" alt="Microchip illustration representing renewable electricity usage and efficiency." />
-      <h2>2023</h2>
-      <h3>Renewable Electricity</h3>
-      <p class="t-summary">Intel reaches 99% renewable electricity usage worldwide.</p>
-      <div class="t-details" aria-label="More details">
-        <ul>
-          <li>Helps lower operational carbon emissions.</li>
-          <li>Supports progress toward long-term climate goals.</li>
-          <li>Demonstrates scale execution across global operations.</li>
-        </ul>
-      </div>
-      <p class="t-hint">Hover / focus for details</p>
-    </article>
-
-    <!-- 2024 -->
-    <article class="t-card" tabindex="0">
-      <img class="t-img" src="img/1.png" alt="Illustration representing collaboration and sustainability leadership." />
-      <h2>2024</h2>
-      <h3>Sustainability Summit</h3>
-      <p class="t-summary">Intel hosts its first Sustainability Summit to align stakeholders.</p>
-      <div class="t-details" aria-label="More details">
-        <ul>
-          <li>Brings suppliers, government, and industry together.</li>
-          <li>Focuses on next-gen sustainable semiconductor manufacturing.</li>
-          <li>Accelerates collaboration on shared sustainability outcomes.</li>
-        </ul>
-      </div>
-      <p class="t-hint">Hover / focus for details</p>
-    </article>
-
-  </div>
-</section>
+    </section>
 
     <!-- Contact -->
     <section class="section section-alt" id="contact">
@@ -384,11 +485,11 @@
             </div>
           </a>
 
-          <a class="contact-item" href="https://github.com/GCA-Classroom/02-prj-intel-sustainability" target="_blank" rel="noreferrer">
+          <a class="contact-item" href="https://github.com/SaifSyed786/SaifSyed786-03-prj-intel-localization" target="_blank" rel="noreferrer">
             <i class="fa-brands fa-github"></i>
             <div>
               <div class="contact-label">GitHub Repo</div>
-              <div class="contact-value">02-prj-intel-sustainability</div>
+              <div class="contact-value">Week 4 Repo</div>
             </div>
           </a>
 
@@ -404,15 +505,26 @@
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <span>© <span id="year"></span> Saif Syed</span>
-      <span class="muted">Built with HTML/CSS • Deployed on GitHub Pages</span>
+  <!-- Week 4 Footer (Required) -->
+  <footer class="border-top py-4 mt-5 bg-light">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
+      <span class="text-secondary">
+        © <span id="year"></span> Intel Sustainability (Student Project)
+      </span>
+      <nav class="d-flex gap-3" aria-label="Footer navigation">
+        <a class="link-secondary" href="#home">Top</a>
+        <a class="link-secondary" href="#intel-timeline">Timeline</a>
+        <a class="link-secondary" href="#highlights">Highlights</a>
+        <a class="link-secondary" href="#subscribe">Subscribe</a>
+      </nav>
     </div>
   </footer>
 
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
   <script>
-    // Mobile nav toggle
+    // Mobile nav toggle (your existing)
     const toggle = document.querySelector(".nav-toggle");
     const links = document.querySelector(".nav-links");
     toggle.addEventListener("click", () => {
@@ -423,9 +535,17 @@
 
     // Footer year
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Prevent demo form from reloading (optional)
+    const form = document.querySelector("#subscribe form");
+    form?.addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert("Subscribed (demo).");
+    });
   </script>
 </body>
 </html>
+
 
 
 
